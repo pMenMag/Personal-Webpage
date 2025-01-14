@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Magalhães - Personal Page</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .header .left-section {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .header .left-section h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-family: "Roboto", sans-serif; /* Slim and professional font */
+      font-weight: 500; /* Light weight for slimmer text */
+      color: #10408d;
+    }
+
+    .header .left-section p {
+      font-size: 1rem;
+      margin: 20px 0 0 0;
+      line-height: 1.6;
+    }
+
+    .header .right-section {
+      flex: 0.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header .right-section img {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Section Styles */
+    .section {
+      margin-top: 20px;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 600; /* Slightly bolder weight for emphasis */
+      color: #444;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+    }
+    
+
+    /* Section Content */
+    .section-content {
+      overflow: hidden;
+      height: auto; /* Default to expanded on larger screens */
+      padding-top: 10px;
+      transition: height 0.3s ease, padding 0.3s ease;
+    }
+
+    .section-content.closed {
+      height: 0; /* Hide on mobile dropdowns */
+      padding-top: 0;
+    }
+
+    .section-content p,
+    .section-content ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .section-content ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .section-content ul li {
+      margin-bottom: 10px;
+    }
+
+    .section a {
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    .section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile-Specific Styles */
+    @media screen and (max-width: 768px) {
+      .section-content {
+        height: 0; /* Initially hidden on mobile */
+        padding-top: 0;
+      }
+
+      .section-content.open {
+        height: auto; /* Show content when open */
+        padding-top: 10px;
+      }
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header .left-section {
+        padding-right: 0;
+        text-align: center;
+      }
+
+      .header .right-section {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <h1>Pedro Magalhães</h1>
+        <p>
+          PhD Student <br>
+          Departament de Matemàtiques i Informàtica <br>
+          Universitat de Barcelona <br>
+          Gran Via 585 <br>
+          08007 Barcelona <br><br>
+          e-mail: pedro.meneses@ub.edu <br>
+          Office: P.01
+        </p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-section">
+        <img src="profile.jpg" alt="Pedro Magalhães">
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="section about-me">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm a PhD student in Homotopy Theory at Universitat de Barcelona, working under the supervision of 
+        <a href="https://www.ub.edu/topologia/jcirici/" target="_blank">Joana Cirici</a>. 
+        Before, I did my Bachelors and Masters degree in mathematics at Instituto Superior Técnico in Lisboa, Portugal.
+      </p>
+    </div>
+
+    <!-- Invited and Contributed Talks Section -->
+    <div class="section">
+      <h2 onclick="toggleSection(this)">Invited and Contributed Talks</h2>
+      <div class="section-content">
+        <ul>
+          <li><b>Formality of Kähler manifolds revisited</b>, May 2024, Après-midi parisienne de topologie algébrique #6, Paris, France (Invited Talk)</li>
+          <li><b>Formality of Kähler manifolds revisited</b>, Jan 2024, Workshop Alps 2024, Sainte-Foy-Tarentaise, France (Invited Talk)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(element) {
+      const isMobile = window.innerWidth <= 768; // Check if screen width is mobile
+      if (!isMobile) return; // Disable clicking on desktop
+
+      const content = element.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+      content.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>
+
+
+
