@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedro Magalhães - Personal Page</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+  <style>
+    /* General Reset */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    /* Container */
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Header Section */
+    .header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 25px;
+    }
+
+    .header .left-section {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .header .left-section h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500; 
+      color: #10408d;
+    }
+
+    .header .left-section p {
+      font-size: 1rem;
+      margin: 20px 0 0 0;
+      line-height: 1.6;
+    }
+
+    .header .right-section {
+      flex: 0.5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .header .right-section img {
+      max-width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Section Styles */
+    .section {
+      margin-top: 20px;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+      color: #444;
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Section Content */
+    .section-content {
+      overflow: hidden;
+      height: auto; /* Default to expanded on larger screens */
+      padding-top: 5px;
+      transition: height 0.3s ease, padding 0.3s ease;
+    }
+
+    .section-content.closed {
+      height: 0; /* Hide on mobile dropdowns */
+      padding-top: 0;
+    }
+
+    .section-content p,
+    .section-content ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .section-content ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+
+    .section-content ul li {
+      margin-bottom: 5px;
+    }
+
+    .section a {
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    .section a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile-Specific Styles */
+    @media screen and (max-width: 768px) {
+      .section-content {
+        height: 0; /* Initially hidden on mobile */
+        padding-top: 0;
+      }
+
+      .section-content.open {
+        height: auto; /* Show content when open */
+        padding-top: 7px;
+      }
+
+      .section h2:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 100%;
+      background: #0056b3;
+      transition: width 0.3s ease;
+      width: 100%;
+    }
+
+    .section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      height: 2px;
+      width: 0;
+      background: #0056b3;
+      transition: width 0.3s ease;
+    }
+    }
+
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header .left-section {
+        padding-right: 0;
+        text-align: center;
+      }
+
+      .header .right-section {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header Section -->
+    <div class="header">
+      <!-- Left Section -->
+      <div class="left-section">
+        <h1>Pedro Magalhães</h1>
+        <p>
+          PhD Student <br>
+          Departament de Matemàtiques i Informàtica <br>
+          Universitat de Barcelona <br>
+          Gran Via 585 <br>
+          08007 Barcelona <br><br>
+          e-mail: pedro.meneses@ub.edu <br>
+          Office: P.01 <br> <br>
+          <a href="https://orcid.org/0009-0004-2334-1980" target="_blank"> <img src="images/ORCID-iD_icon_32x32.png" width="15" height="15"> ORCID </a>
+        </p>
+      </div>
+
+      <!-- Right Section -->
+      <div class="right-section">
+        <img src="images/profile.jpg" alt="Pedro Magalhães">
+      </div>
+    </div>
+
+    <!-- About Me Section -->
+    <div class="section about-me">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm a PhD student in Homotopy Theory at Universitat de Barcelona, working under the supervision of 
+        <a href="https://www.ub.edu/topologia/jcirici/" target="_blank">Joana Cirici</a>. 
+        Before, I did my Bachelors and Masters degree in mathematics at Instituto Superior Técnico in Lisboa, Portugal.
+      </p>
+      <p>I'm interested in interactions between Homotopy Theory and Complex and Algebraic Geometry. This includes:</p>
+        <ul>
+          <li>Rational Homotopy Theory and Formality,</li>
+          <li>Operadic Calculus and Koszul Duality,</li>
+          <li>Topology of algebraic varieties,</li>
+          <li>Mixed Hodge Theory.</li>
+        </ul>
+    </div>
+
+    <!-- Invited and Contributed Talks Section -->
+    <div class="section">
+      <h2 onclick="toggleSection(this)">Invited and Contributed Talks</h2>
+      <div class="section-content">
+        <ul>
+          <li><b>Formality of Kähler manifolds revisited</b>, May 2024, Après-midi parisienne de topologie algébrique #6, Paris, France (Invited Talk)</li>
+          <li><b>Formality of Kähler manifolds revisited</b>, Jan 2024, Workshop Alps 2024, Sainte-Foy-Tarentaise, France (Invited Talk)</li>
+          <li><b>Formality of Kähler manifolds revisited</b>, Nov 2023, Operadic Methods in Geometry, Barcelona, Spain (Invited Talk)</li>
+          <li><b>Enriched categories and ∞-cosmoi</b>, Oct 2023, Infinity Cosmoi seminar of the topology group at Universitat de Barcelona, Barcelona, Spain</li>
+          <li><b>Formality of Kähler manifolds revisited</b>, Jul 2023, Young Topologists Meeting 2023, Lausanne, Switzerland</li>
+          <li><b>Background on MU and BP</b>, Jun 2023, Talbot Workshop 2023, Minnesota, USA</li>
+          <li><b>Formality of Hodge structures and Kähler manifolds</b>, Nov 2022, Homotopical Methods in Geometry 2022, Barcelona, Spain (Invited Talk)</li>
+          <li><b>Goodwillie calculus I</b>, Oct 2022, Infinity Topoi seminar of the topology group at Universitat de Barcelona, Barcelona, Spain</li>
+          <li><b>Formal Deformation Theory of Complex Structures</b>, Apr 2022, Deformation theory of complex manifolds and higher homotopical structures seminar, Barcelona, Spain</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Posters Section -->
+    <div class="section">
+      <h2 onclick="toggleSection(this)">Posters</h2>
+      <div class="section-content">
+        <ul>
+          <li><b>Real Homotopy and Hodge Theory in Kähler Geometry</b>, Jul 2022, Young Topologists Meeting 2022, Copenhagen, Denmark <a href="poster.pdf" target="_blank"> <img src="images/PDF_icon.png" alt="poster" width="20" height="20"> </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Teaching Section -->
+    <div class="section">
+      <h2 onclick="toggleSection(this)">Teaching</h2>
+      <div class="section-content">
+        <ul>
+          <li>Calculus, Bioinformatics degree, Universitat Pompeu Fabra, Barcelona (2022-2024)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSection(element) {
+      const isMobile = window.innerWidth <= 768; // Check if screen width is mobile
+      if (!isMobile) return; // Disable clicking on desktop
+
+      const content = element.nextElementSibling;
+      const isOpen = content.classList.contains('open');
+      content.classList.toggle('open', !isOpen);
+    }
+  </script>
+</body>
+</html>
