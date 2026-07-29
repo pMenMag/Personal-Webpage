@@ -225,10 +225,10 @@
       <div class="section-content">
         <ul>
           <li><p><b>Mixed Hodge formality</b> </p> 
-              <p>Preprint <a id="paper-link" href="https://arxiv.org/abs/2607.21176"></a> </p>
+              <p>Preprint <a href="https://arxiv.org/abs/2607.21176">arxiv:2607.21176</a> </p>
           </li>
           <li><p><b>The inflation functor in pluripotential homological algebra</b> (with <a href="https://asopenagilboy.gitlab.io/">Anna Sopena Gilboy</a>) </p>
-              <p>Preprint <a id="paper-link" href="https://arxiv.org/abs/2605.22418"></a></p>
+              <p>Preprint <a href="https://arxiv.org/abs/2605.22418">arxiv:2605.22418</a> </p>
           </li>
         </ul>
       </div>
@@ -268,7 +268,7 @@
       <div class="section-content">
         <ul>
           <li>Calculus, Bioinformatics degree, Universitat Pompeu Fabra, Barcelona (2022-2024)</li>
-          <li>Estructures Algebraiques, Mathematics degree, Universitat de Barcelona, Barcelona 2025</li>
+          <li>Estructures Algebraiques, Mathematics degree, Universitat de Barcelona, Barcelona (2025)</li>
         </ul>
       </div>
     </div>
@@ -283,25 +283,6 @@
       const isOpen = content.classList.contains('open');
       content.classList.toggle('open', !isOpen);
     }
-  </script>
-  <script>
-      function extractArxivId(url) {
-        let match = url.match(/(\d{4}\.\d{4,5})/);
-        if (match) {
-          return "arxiv:" + match[1];
-        }
-      
-        match = url.match(/([a-z\-]+(?:\.[A-Z]{2})?\/\d{7})/);
-        if (match) {
-          return "arxiv:" + match[1];
-        }
-      
-        return null;
-      }
-      const url = document.getElementById("paper-link").href;
-      const id = extractArxivId(url);
-
-      document.getElementById("paper-link").textContent = id;
   </script>
 </body>
 </html>
