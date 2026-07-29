@@ -224,8 +224,12 @@
       <h2 onclick="toggleSection(this)">Preprints/Publications</h2>
       <div class="section-content">
         <ul>
-          <li><b>Mixed Hodge formality</b> - Preprint <a href="https://arxiv.org/abs/2607.21176">extractArxivId("https://arxiv.org/abs/2607.21176")</a> </li>
-          <li><b>The inflation functor in pluripotential homological algebra</b> (with <a href="https://asopenagilboy.gitlab.io/">Anna Sopena Gilboy</a> - Preprint extractArxivId("https://arxiv.org/abs/2605.22418")</li>
+          <li><p><b>Mixed Hodge formality</b> </p> 
+              <p>Preprint <a id="paper-link" href="https://arxiv.org/abs/2607.21176"></a> </p>
+          </li>
+          <li><p><b>The inflation functor in pluripotential homological algebra</b> (with <a href="https://asopenagilboy.gitlab.io/">Anna Sopena Gilboy</a>) </p>
+              <p>Preprint <a id="paper-link" href="https://arxiv.org/abs/2605.22418"></a></p>
+          </li>
         </ul>
       </div>
     </div>
@@ -294,6 +298,10 @@
       
         return null;
       }
+      const url = document.getElementById("paper-link").href;
+      const id = extractArxivId(url);
+
+      document.getElementById("paper-link").textContent = id;
   </script>
 </body>
 </html>
