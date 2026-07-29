@@ -191,7 +191,7 @@
           Gran Via 585 <br>
           08007 Barcelona <br><br>
           e-mail: pedro.meneses@ub.edu <br>
-          Office: P.01 <br> <br>
+          Office: P.105 <br> <br>
           <a href="https://orcid.org/0009-0004-2334-1980" target="_blank"> <img src="images/ORCID-iD_icon_32x32.png" width="15" height="15"> ORCID </a>
         </p>
       </div>
@@ -217,6 +217,17 @@
           <li>Topology of algebraic varieties,</li>
           <li>Mixed Hodge Theory.</li>
         </ul>
+    </div>
+
+    <!-- Preprints/Publications -->
+    <div class="section">
+      <h2 onclick="toggleSection(this)">Preprints/Publications</h2>
+      <div class="section-content">
+        <ul>
+          <li><b>Mixed Hodge formality</b> - Preprint <a href="https://arxiv.org/abs/2607.21176">extractArxivId("https://arxiv.org/abs/2607.21176")</a> </li>
+          <li><b>The inflation functor in pluripotential homological algebra</b> (with <a href="https://asopenagilboy.gitlab.io/">Anna Sopena Gilboy</a> - Preprint extractArxivId("https://arxiv.org/abs/2605.22418")</li>
+        </ul>
+      </div>
     </div>
 
     <!-- Invited and Contributed Talks Section -->
@@ -253,6 +264,7 @@
       <div class="section-content">
         <ul>
           <li>Calculus, Bioinformatics degree, Universitat Pompeu Fabra, Barcelona (2022-2024)</li>
+          <li>Estructures Algebraiques, Mathematics degree, Universitat de Barcelona, Barcelona 2025</li>
         </ul>
       </div>
     </div>
@@ -267,6 +279,21 @@
       const isOpen = content.classList.contains('open');
       content.classList.toggle('open', !isOpen);
     }
+  </script>
+  <script>
+      function extractArxivId(url) {
+        let match = url.match(/(\d{4}\.\d{4,5})/);
+        if (match) {
+          return "arxiv:" + match[1];
+        }
+      
+        match = url.match(/([a-z\-]+(?:\.[A-Z]{2})?\/\d{7})/);
+        if (match) {
+          return "arxiv:" + match[1];
+        }
+      
+        return null;
+      }
   </script>
 </body>
 </html>
